@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <ul>
+        {% for i in object_list %}
+
+            <li>
+            <h1>Hello - {{ i.employee_name }}</h1>
+            <p>E-mail - {{ i.email }}</p>
+            <p>Name - {{ i.first_name }}</p>
+            <p>Experience - {{ i.experience }}</p>
+            {% if i.category %}
+            <p>Your category is - {{ i.category }} </p>
+            {% else %}
+            <p>Your category is bot defined</p>
+            {% endif %}
+            </li>
+
+        {% endfor %}
+    </ul>
+    <form action="{% url 'employee:login' %}" method="POST">
+         {% csrf_token %}
+        <button type="submit">Exit</button>
+    </form>
+
+
+</div>
+
+</body>
+</html>

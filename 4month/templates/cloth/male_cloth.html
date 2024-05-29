@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <ol>
+        {% for i in male %}
+        <li>
+            <p>{{ i.name }}</p>
+            <p>{{ i.price }}</p>
+            {% for j in i.tags.all %}
+                <p>#{{ j.name }}</p>
+            {% endfor %}
+        </li>
+        {% endfor %}
+    </ol>
+
+</center>
+</body>
+</html>
