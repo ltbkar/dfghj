@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="{{ post_id.image.url }}" alt="">
+<h1>{{ book_id.title }}</h1>
+<p>{{ book_id.description }}</p>
+
+{% if book.id.music %}
+    {% if book_id.music.url %}
+        <audio controls>
+            <source src="{{ book_id.music.url }}" type="audio/mp3">
+            Your audio does not support the audio tag.
+        </audio>
+    {% else %}
+        <p>Error: The 'music' attribute has no file associated with it.</p>
+    {% endif %}
+{% endif %}
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/{{ book_id.video }}" frameborder="0" allowfullscreen></iframe>
+<p>{{ book_id.category_book }}</p>
+<p>{{ book_id.opinion_book }}</p>
+<p>{{ book_id.recommendation }}</p>
+</body>
+</html>
